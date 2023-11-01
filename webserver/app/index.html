@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Number Detection</title>
+    <script src="index.js" async></script>
+    <link rel="stylesheet" href="index.css"></link>
+</head>
+
+<body>
+    <h2>Number image detection</h2>
+    <form action="/" method="post" enctype="multipart/form-data">
+        <label for="file">File</label>
+        <input id="file" name="file" type="file" />
+        <button>Upload</button>
+    </form>
+    <div id="number-response">
+        <div>
+            <span>Number in image:</span>
+            <span id="detected-number"></span>
+        </div>
+        <button onclick="numberToText()">Number to text</button>
+        <div>
+            <span>As text: </span>
+            <span id="number-as-text"></span>
+        </div>
+    </div>
+    <div id="t2s">
+        <button onclick="playAudio()">Play</button>
+    </div>
+    <div id="translate">
+        <!--TODO: populate select with translatable languages-->
+        <select>
+            <option>Lang 1</option>
+        </select>
+        <button onclick="translate()">Translate</button>
+    </div>
+</body>
+
+</html>

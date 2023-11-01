@@ -1,0 +1,33 @@
+# First, add the API
+apiVersion: apps/v1
+# This will be the deployment setup
+kind: Deployment
+metadata:
+  # Name your Deployment here
+  name: number-detection-dep
+  labels:
+    # label your deployment
+    app: number-detection-app
+spec:
+  # The number of pods/replicas to run
+  replicas: 1            
+  selector:
+    matchLabels:
+    # selector to match the pod
+      app: number-detection-app  
+  template:
+    metadata:
+      labels:
+      # label your pod
+        app: number-detection-app  
+    spec:
+      containers:
+      # Add the container name for Kubernetes
+      - name: number-detection
+      # Add the local image name
+        image: number-detection 
+        # never pull the image policy
+        imagePullPolicy: Never
+        ports:
+        # port for running the container
+        - containerPort: 5000
